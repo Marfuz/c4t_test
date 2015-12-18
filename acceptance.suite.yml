@@ -1,0 +1,31 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+class_name: AcceptanceTester
+modules:
+
+    enabled:
+        - WebDriver:
+        - \Helper\Acceptance
+    config:
+        WebDriver:
+            url: http://cash4tags.co.uk/
+            browser: firefox
+      #      browser: chrome
+            version: ANY
+            window_size: maximize
+            javascriptEnabled: true
+            acceptSslCerts : true
+            takesScreenshot: true
+            cssSelectorsEnabled: true
+            handlesAlerts: true
+            delay: 1500
+            show_cmd: open %s
+      #      host: 'http://jenkins.quartsoft.com:4444/wd/hub'
+      #       host: 'http://jenkins.quartsoft.com
+      #       port: 4444/wd/hub
+            capabilities:
+                unexpectedAlertBehaviour: 'accept'
